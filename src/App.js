@@ -92,11 +92,11 @@ const Home = ({ }) => {
     if ((!isCorrect && guessCount >= 3) || (isCorrect && guessCount <= 3)) {
       const guessImages = isCorrect ? images.praise : images.heckle;
       const imageIds = Object.keys(guessImages);
-      const guessImage = guessImages[imageIds[getRandomIndex(imageIds.length)]];
-      setGuessImage({
-        hidden: false,
-        src: guessImage,
-      });
+      const src = guessImages[imageIds[getRandomIndex(imageIds.length)]];
+      setGuessImage({ hidden: false, src });
+      setTimeout(() => {
+        setGuessImage({ src, hidden: true });
+      }, 4000);
     }
 
     updateStats({
@@ -160,17 +160,12 @@ const Home = ({ }) => {
               <p className="validation-error">Try a little harder... literally anything is better than your guess.</p>
             )}
           </form>
-          <div className={cx('guess__image-container', ({
-            'guess__image-container--hidden': guessImage.hidden,
-          }))}>
-            <img src={guessImage.src} />
-          </div>
         </div>
       </div>
       <div className="content-bottom">
         <div className="question">
           <div className="question__image-container">
-            <img src={questionImage} />
+            <img src={guessImage.hidden ? questionImage: guessImage.src} />
           </div>
           <Link
             to={`/?question=${questionIndex - 1}`}

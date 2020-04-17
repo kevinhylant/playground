@@ -14,16 +14,16 @@ $spacing-tiny: 4px;
 $spacing-small: 8px;
 $spacing-regular: 16px;
 $spacing-large: 32px;
+$spacing-huge: 48px;
+$spacing-mega: 60px;
+
 $radius-small: 3px;
 $radius-regular: 5px;
 $radius-large: 8px;
 
 $border-width: 3px;
 
-$icon-width: 24px;
-$icon-width-desktop: 48px;
-
-$nav-height: 64px;
+$icon-width: 48px;
 
 $font-small: 14px;
 $font-regular: 20px;
@@ -37,9 +37,6 @@ $font-huge: 32px;
 a {
   color: $color-brand;
   text-decoration: none;
-  &:hover {
-    opacity: 0.7;
-  }
 }
 
 button:focus {
@@ -58,7 +55,6 @@ button:focus {
 }
 
 .nav {
-  height: $nav-height;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,10 +66,16 @@ button:focus {
   &__title {
     font-size: $font-large;
     padding-left: $spacing-regular;
+
+    margin: $spacing-regular 0;
   }
 
   &__hamburger {
-    padding: $spacing-regular;
+    padding: $spacing-small;
+
+    @media (min-width: $breakpoint-md) {
+      padding: $spacing-regular;
+    }
   }
 }
 
@@ -143,7 +145,11 @@ button:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    padding: $spacing-regular;
+
+    @media (min-width: $breakpoint-md) {
+      width: 50%;
+    }
 
     &__fields {
       display: flex;
@@ -162,8 +168,8 @@ button:focus {
     }
 
     &__label {
-      font-size: 26px;
-      width: 90%;
+      font-size: $font-regular;
+      width: 95%;
       text-align: center;
       white-space: pre-wrap;
 
@@ -188,31 +194,14 @@ button:focus {
   .validation-error {
     color: $color-error;
   }
-
-  &__image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
-    transition: 1s;
-
-    &--hidden {
-      width: 0%;
-      height: 0%;
-    }
-
-    img {
-      border-radius: $radius-large;
-      height: 75%;
-      width: 75%;
-      object-fit: cover;
-    }
-  }
 }
 
 .question {
-  padding-top: $spacing-large;
+  padding: $spacing-regular;
+
+  @media (min-width: $breakpoint-xs) {
+    padding: $spacing-large;
+  }
 
   &__nav {
     background-color: white;
@@ -222,14 +211,13 @@ button:focus {
     border-radius: 50%;
     padding: $spacing-tiny;
     position: absolute;
-    bottom: calc(#{$nav-height} + #{$spacing-large});
+    bottom: $spacing-huge;
     z-index: 1;
     box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.7);
     transition: 0.2s ease-in-out;
 
     @media (min-width: $breakpoint-xs) {
-      height: $icon-width-desktop;
-      width: $icon-width-desktop;
+      bottom: 100px;
     }
 
     &:active {
@@ -238,10 +226,6 @@ button:focus {
       transition: 0.1s ease-in-out;
       height: $icon-width * $size-multipler;
       width: $icon-width * $size-multipler;
-      @media (min-width: $breakpoint-xs) {
-        height: $icon-width-desktop * $size-multipler;
-        width: $icon-width-desktop * $size-multipler;
-      }
     }
 
     img {
