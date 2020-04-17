@@ -119,7 +119,7 @@ button:focus {
     color: $color-error;
   }
 
-  .heckling {
+  &__image-container {
     display: flex;
     align-items: center;
     justify-content: center;
