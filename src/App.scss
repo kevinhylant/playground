@@ -1,0 +1,187 @@
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 736px;
+$breakpoint-md: 980px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1690px;
+
+$color-brand: #282c34;
+$color-error: red;
+
+$spacing-tiny: 4px;
+$spacing-small: 8px;
+$spacing-regular: 16px;
+$spacing-large: 32px;
+$radius-small: 3px;
+$radius-regular: 5px;
+$radius-large: 8px;
+
+$border-width: 3px;
+
+a {
+  color: $color-brand;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+
+  input {
+    font-family: 'Ubuntu', sans-serif;
+  }
+}
+
+.nav {
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14;
+  color: $color-brand;
+  border-bottom: 4px solid $color-brand;
+
+  &__title {
+    font-size: 20;
+    padding-left: 16px;
+  }
+
+  &__hamburger {
+    padding: $spacing-large;
+  }
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.guess {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: $border-width solid $color-brand;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    &__fields {
+      display: flex;
+
+      input:focus {
+        outline: none;
+        box-shadow: 0 0 4px 2px rgba(40,44,52, 0.3);
+        transition: 0.3s ease;
+      }
+      input {
+        padding: $spacing-small;
+      }
+      input[type=submit] {
+        margin-left: $spacing-small;
+      }
+    }
+
+    &__label {
+      font-size: 26px;
+
+      @media (min-width: $breakpoint-sm) {
+        font-size: 36px;
+      }
+    }
+
+    input {
+      margin-top: $spacing-small;
+      font-size: 16px;
+      border: $border-width solid $color-brand;
+      border-radius: $radius-large;
+
+      @media (min-width: $breakpoint-sm) {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .validation-error {
+    color: $color-error;
+  }
+
+  .heckling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    transition: 1s;
+
+    &--hidden {
+      width: 0%;
+      height: 0%;
+    }
+
+    img {
+      border-radius: $radius-large;
+      height: 75%;
+      width: 75%;
+      object-fit: cover;
+    }
+  }
+}
+
+.question {
+  padding-top: $spacing-large;
+  height: 70%;
+  background-color: orange;
+
+  &__image-container {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    height: 0;
+    padding: 90% 0 0 0;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-xs) {
+      padding: 60% 0 0 0;
+    }
+    @media (min-width: $breakpoint-sm) {
+      padding: 40% 0 0 0;
+    }
+    @media (min-width: $breakpoint-md) {
+      padding: 35% 0 0 0;
+    }
+    @media (min-width: $breakpoint-lg) {
+      padding: 35% 0 0 0;
+    }
+    @media (min-width: $breakpoint-xl) {
+      padding: 30% 0 0 0;
+    }
+
+    img {
+      border-radius: $radius-large;
+      position: absolute;
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+}
