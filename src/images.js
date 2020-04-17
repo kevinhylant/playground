@@ -4,7 +4,9 @@ import neilPatrickHarris from './images/heckle/neilPatrickHarris.gif';
 
 import dragon from './images/questions/dragon.jpg';
 import footsie from './images/questions/footsie.jpg';
+import marshmallow from './images/questions/marshmallow.jpg';
 import speakeasy from './images/questions/speakeasy.jpg';
+import teeball from './images/questions/teeball.jpg';
 
 import albertEinstein from './images/praise/albertEinstein.jpg';
 import goodWillHunting from './images/praise/goodWillHunting.gif';
@@ -21,7 +23,9 @@ export const images = {
   questions: {
     dragon,
     footsie,
+    marshmallow,
     speakeasy,
+    teeball,
   },
   praise: {
     albertEinstein,

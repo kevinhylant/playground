@@ -16,13 +16,19 @@ import './App.scss';
 
 const questions = [{
   answer: 'dragon',
-  imageId: 'dragon'
-}, {
-  answer: 'speakeasy',
-  imageId: 'speakeasy'
+  imageId: 'dragon',
 }, {
   answer: 'footsie',
-  imageId: 'footsie'
+  imageId: 'footsie',
+}, {
+  answer: 'speakeasy',
+  imageId: 'speakeasy',
+}, {
+  answer: 'teeball',
+  imageId: 'teeball',
+}, {
+  answer: 'marshmallow',
+  imageId: 'marshmallow',
 }]
 
 function getRandomIndex(max) {
