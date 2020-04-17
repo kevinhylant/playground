@@ -6,8 +6,7 @@ import {
   Link,
   Route,
   Switch,
-  useParams,
-  Redirect,
+  useLocation,
 } from "react-router-dom";
 import useWindowSize from 'react-use/lib/useWindowSize'
 import ReactConfetti from 'react-confetti'
@@ -49,13 +48,17 @@ const Confetti = ({ stopConfetti }) => {
   )
 }
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 const Home = ({ }) => {
   const { register, handleSubmit, errors, reset } = useForm()
   const [stats, setStats] = useState({});
   const [hasConfetti, setHasConfetti] = useState(false);
   const [guessImage, setGuessImage] = useState({ hidden: true });
-  const { index } = useParams();
-  const questionIndex = Number(index);
+  const query = useQuery();
+  const questionIndex = Number(query.get('question')) ?? 0;
 
   function hideGuessImage() {
     setGuessImage({
@@ -170,7 +173,7 @@ const Home = ({ }) => {
             <img src={questionImage} />
           </div>
           <Link
-            to={`/${questionIndex - 1}`}
+            to={`/?question=${questionIndex - 1}`}
             onClick={() => {
               hideGuessImage();
               reset();
@@ -183,7 +186,7 @@ const Home = ({ }) => {
             </button>
           </Link>
           <Link
-            to={`/${questionIndex + 1}`}
+            to={`/?question=${questionIndex + 1}`}
             onClick={() => {
               hideGuessImage();
               reset();
@@ -243,11 +246,8 @@ const App = () => {
         </nav>
         <div className="content">
           <Switch>
-            <Route path="/:index">
-              <Home />
-            </Route>
             <Route path="/">
-              <Redirect to={{ pathname: '/0' }} />
+              <Home />
             </Route>
           </Switch>
         </div>
