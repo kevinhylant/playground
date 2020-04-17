@@ -7,6 +7,7 @@ $breakpoint-lg: 1280px;
 $breakpoint-xl: 1690px;
 
 $color-brand: #282c34;
+$color-brand-secondary: #F08F8F;
 $color-error: red;
 
 $spacing-tiny: 4px;
@@ -18,6 +19,20 @@ $radius-regular: 5px;
 $radius-large: 8px;
 
 $border-width: 3px;
+
+$icon-width: 24px;
+$icon-width-desktop: 48px;
+
+$nav-height: 64px;
+
+$font-small: 14px;
+$font-regular: 20px;
+$font-large: 26px;
+$font-huge: 32px;
+
+.hidden {
+  display: none;
+}
 
 a {
   color: $color-brand;
@@ -43,35 +58,86 @@ button:focus {
 }
 
 .nav {
-  height: 64px;
+  height: $nav-height;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 14;
+  font-size: $font-small;
   color: $color-brand;
-  border-bottom: 4px solid $color-brand;
+  border-bottom: $border-width solid $color-brand;
 
   &__title {
-    font-size: 20;
-    padding-left: 16px;
+    font-size: $font-large;
+    padding-left: $spacing-regular;
   }
 
   &__hamburger {
-    padding: $spacing-large;
+    padding: $spacing-regular;
+  }
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  padding: $spacing-small;
+  font-size: $font-regular;
+  box-shadow: inset 0 $border-width 0 0 $color-brand;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-large;
+    padding: $spacing-regular;
+  }
+
+  &__item {
+    padding: 0 $spacing-small;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-huge;
+      padding: 0 $spacing-regular;
+    }
+
+    &:not(:first-child) {
+      border-left: $border-width solid $color-brand;
+    }
+
+    strong {
+      font-weight: 800;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-huge;
+      }
+    }
   }
 }
 
 .content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-top {
+  height: 30%;
+  box-shadow: inset 0 calc(-#{$border-width}) 0 0px $color-brand;
+}
+.content-bottom {
+  flex-grow: 1;
+  background-color: $color-brand-secondary;
 }
 
 .guess {
-  height: 30%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: $border-width solid $color-brand;
 
   .form {
     display: flex;
@@ -97,20 +163,24 @@ button:focus {
 
     &__label {
       font-size: 26px;
+      width: 90%;
+      text-align: center;
+      white-space: pre-wrap;
 
-      @media (min-width: $breakpoint-sm) {
-        font-size: 36px;
+      @media (min-width: $breakpoint-md) {
+        width: 70%;
+        font-size: $font-huge;
       }
     }
 
     input {
       margin-top: $spacing-small;
-      font-size: 16px;
+      font-size: $font-regular;
       border: $border-width solid $color-brand;
       border-radius: $radius-large;
 
       @media (min-width: $breakpoint-sm) {
-        font-size: 26px;
+        font-size: $font-large;
       }
     }
   }
@@ -143,8 +213,62 @@ button:focus {
 
 .question {
   padding-top: $spacing-large;
-  height: 70%;
-  background-color: orange;
+
+  &__nav {
+    background-color: white;
+    border: $border-width solid $color-brand;
+    height: $icon-width;
+    width: $icon-width;
+    border-radius: 50%;
+    padding: $spacing-tiny;
+    position: absolute;
+    bottom: calc(#{$nav-height} + #{$spacing-large});
+    z-index: 1;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.7);
+    transition: 0.2s ease-in-out;
+
+    @media (min-width: $breakpoint-xs) {
+      height: $icon-width-desktop;
+      width: $icon-width-desktop;
+    }
+
+    &:active {
+      $size-multipler: 1.10;
+
+      transition: 0.1s ease-in-out;
+      height: $icon-width * $size-multipler;
+      width: $icon-width * $size-multipler;
+      @media (min-width: $breakpoint-xs) {
+        height: $icon-width-desktop * $size-multipler;
+        width: $icon-width-desktop * $size-multipler;
+      }
+    }
+
+    img {
+      height: 100%;
+    }
+
+    &--back {
+      left: 15%;
+    }
+
+    &--forward {
+      right: 15%;
+      transform: rotate(180deg)
+    }
+
+    &--highlighted {
+      $size-multipler: 1.5;
+      border: calc(#{$border-width * 2})  solid gold;
+
+      height: $icon-width * $size-multipler;
+      width: $icon-width * $size-multipler;
+      @media (min-width: $breakpoint-xs) {
+        height: $icon-width-desktop * $size-multipler;
+        width: $icon-width-desktop * $size-multipler;
+      }
+    }
+  }
 
   &__image-container {
     display: block;
