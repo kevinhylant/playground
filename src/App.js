@@ -220,7 +220,7 @@ const App = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <Router basename="/playground">
+    <Router basename="/pun-fun">
       <div className="app">
         <nav className="nav">
           <h1 className="nav__title">
