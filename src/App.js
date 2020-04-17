@@ -79,7 +79,7 @@ const Home = ({ }) => {
 
   function onSubmit(formData) {
     const { guess } = formData;
-    const answer = questions[questionIndex].answer;
+    const answer = (questions[questionIndex].answer ?? '').trim();
 
     if (!guess) {
       return;
