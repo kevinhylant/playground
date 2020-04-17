@@ -258,15 +258,7 @@ button:focus {
     }
 
     &--highlighted {
-      $size-multipler: 1.5;
       border: calc(#{$border-width * 2})  solid gold;
-
-      height: $icon-width * $size-multipler;
-      width: $icon-width * $size-multipler;
-      @media (min-width: $breakpoint-xs) {
-        height: $icon-width-desktop * $size-multipler;
-        width: $icon-width-desktop * $size-multipler;
-      }
     }
   }
 

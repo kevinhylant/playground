@@ -82,7 +82,6 @@ const Home = ({ }) => {
     const questionStats = stats[questionIndex] ?? {};
     const guessCount = (questionStats.guessCount ?? 0) + 1;
 
-    let showImage;
     if ((!isCorrect && guessCount >= 3) || (isCorrect && guessCount <= 3)) {
       const guessImages = isCorrect ? images.praise : images.heckle;
       const imageIds = Object.keys(guessImages);
@@ -91,13 +90,11 @@ const Home = ({ }) => {
         hidden: false,
         src: guessImage,
       });
-      showImage = true;
     }
 
     updateStats({
       isCorrect,
       guessCount,
-      showImage,
     });
     setHasConfetti(isCorrect);
   }
@@ -120,7 +117,7 @@ const Home = ({ }) => {
       } else if (guessCount <= 3) {
         formLabel = 'Ya wicked smaaat';
       } else {
-        formLabel = `You know what they say, ${guessCount}rd time’s the charm... wait, nobody says that. Think a little harder next time.`;
+        formLabel = `You know what they say, ${guessCount}rd time’s the charm... wait, nobody says that. \n🥜 🧠`;
       }
     } else {
       if (guessCount === 1) {
