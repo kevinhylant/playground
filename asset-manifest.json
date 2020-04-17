@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.css": "/playground/static/css/main.84e79a00.chunk.css",
-    "main.js": "/playground/static/js/main.9a394e70.chunk.js",
-    "main.js.map": "/playground/static/js/main.9a394e70.chunk.js.map",
+    "main.css": "/playground/static/css/main.763f2f40.chunk.css",
+    "main.js": "/playground/static/js/main.b4e40d45.chunk.js",
+    "main.js.map": "/playground/static/js/main.b4e40d45.chunk.js.map",
     "runtime-main.js": "/playground/static/js/runtime-main.55acabb1.js",
     "runtime-main.js.map": "/playground/static/js/runtime-main.55acabb1.js.map",
-    "static/js/2.ab2f61e3.chunk.js": "/playground/static/js/2.ab2f61e3.chunk.js",
-    "static/js/2.ab2f61e3.chunk.js.map": "/playground/static/js/2.ab2f61e3.chunk.js.map",
+    "static/js/2.0e70baa7.chunk.js": "/playground/static/js/2.0e70baa7.chunk.js",
+    "static/js/2.0e70baa7.chunk.js.map": "/playground/static/js/2.0e70baa7.chunk.js.map",
     "index.html": "/playground/index.html",
-    "precache-manifest.eca0bfb244e66ea06d52ce1f2920aa69.js": "/playground/precache-manifest.eca0bfb244e66ea06d52ce1f2920aa69.js",
+    "precache-manifest.2bb19cf225c46b9d2e75a0106ceaefd2.js": "/playground/precache-manifest.2bb19cf225c46b9d2e75a0106ceaefd2.js",
     "service-worker.js": "/playground/service-worker.js",
-    "static/css/main.84e79a00.chunk.css.map": "/playground/static/css/main.84e79a00.chunk.css.map",
-    "static/js/2.ab2f61e3.chunk.js.LICENSE.txt": "/playground/static/js/2.ab2f61e3.chunk.js.LICENSE.txt",
+    "static/css/main.763f2f40.chunk.css.map": "/playground/static/css/main.763f2f40.chunk.css.map",
+    "static/js/2.0e70baa7.chunk.js.LICENSE.txt": "/playground/static/js/2.0e70baa7.chunk.js.LICENSE.txt",
+    "static/media/albertEinstein.jpg": "/playground/static/media/albertEinstein.5eda483e.jpg",
     "static/media/chrisFarley.gif": "/playground/static/media/chrisFarley.67ab4047.gif",
     "static/media/dragon.jpg": "/playground/static/media/dragon.8b0ef686.jpg",
+    "static/media/goodWillHunting.gif": "/playground/static/media/goodWillHunting.5bbe6285.gif",
     "static/media/jamesCorden.gif": "/playground/static/media/jamesCorden.a9910605.gif",
     "static/media/neilPatrickHarris.gif": "/playground/static/media/neilPatrickHarris.0c746bac.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.55acabb1.js",
-    "static/js/2.ab2f61e3.chunk.js",
-    "static/css/main.84e79a00.chunk.css",
-    "static/js/main.9a394e70.chunk.js"
+    "static/js/2.0e70baa7.chunk.js",
+    "static/css/main.763f2f40.chunk.css",
+    "static/js/main.b4e40d45.chunk.js"
   ]
 }
