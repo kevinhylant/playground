@@ -43,7 +43,6 @@ const Confetti = ({ stopConfetti }) => {
   )
 }
 
-
 const Home = ({ }) => {
   const { register, handleSubmit, errors, reset } = useForm()
   const [stats, setStats] = useState({});
@@ -51,7 +50,6 @@ const Home = ({ }) => {
   const [guessImage, setGuessImage] = useState({ hidden: true });
   const { index } = useParams();
   const questionIndex = Number(index);
-  console.log({ questionIndex });
 
   function hideGuessImage() {
     setGuessImage({
@@ -131,9 +129,6 @@ const Home = ({ }) => {
       }
     }
   }
-  console.log({
-    hideImage: !questionStats.showImage,
-  })
 
   return (
     <>
